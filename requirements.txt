@@ -1,8 +1,0 @@
-streamlit
-demucs
-torch
-torchaudio
-pydub
-librosa
-soundfile
-numpy
