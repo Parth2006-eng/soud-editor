@@ -1,5 +1,6 @@
 import streamlit as st
 import subprocess
+import sys
 import tempfile
 import os
 from pathlib import Path
@@ -194,7 +195,7 @@ if uploaded_audio is not None:
                 f.write(uploaded_audio.getbuffer())
 
             out_dir = os.path.join(work_dir, "separated")
-            cmd = ["python", "-m", "demucs", "-n", model_name, "-o", out_dir, input_path]
+            cmd = [sys.executable, "-m", "demucs", "-n", model_name, "-o", out_dir, input_path]
             result = subprocess.run(cmd, capture_output=True, text=True)
 
             if result.returncode != 0:
